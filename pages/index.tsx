@@ -1,5 +1,6 @@
 import Head from 'next/head'
 
+import Animation3d from '../components/Animation3d'
 import AspectRatioBox from '../components/AspectRatioBox'
 import Terminal from '../components/Terminal'
 
@@ -13,11 +14,11 @@ export default function Home() {
       </Head>
 
       <main className="h-screen bg-gray-800 text-gray-50 grid place-items-center">
-        <div style={{ width: '600px' }}>
+        <Animation3d style={{ width: '600px' }}>
           <AspectRatioBox aspectRatio={5 / 3}>
             <Terminal className="h-full" />
           </AspectRatioBox>
-        </div>
+        </Animation3d>
       </main>
     </>
   )
