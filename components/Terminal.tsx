@@ -66,7 +66,7 @@ const Terminal: React.FC<TerminalProps> = ({ className, style }) => {
       </header>
       <section className="py-3">
         <span>
-          {'⚡️ '} <strong>~</strong> {' echo "I\'m Unstable!"'}
+          {'⚡️ '} <strong>~</strong> {' echo "I\'m Unstable"'}
         </span>
       </section>
     </div>
