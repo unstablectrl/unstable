@@ -4,7 +4,9 @@ export const useClientRect = (): [DOMRect | null, (node: any) => void] => {
   const [rect, setRect] = useState(null)
   const ref = useCallback(node => {
     if (node !== null) {
-      setRect(node.getBoundingClientRect())
+      const updateRectWithNode = () => setRect(node.getBoundingClientRect())
+      const resizeObserver = new ResizeObserver(updateRectWithNode)
+      resizeObserver.observe(node)
     }
   }, [])
   return [rect, ref]
