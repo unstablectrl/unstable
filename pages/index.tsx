@@ -13,12 +13,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="h-screen bg-gray-800 text-gray-50 grid place-items-center">
-        <Animation3d style={{ width: '600px' }}>
-          <AspectRatioBox aspectRatio={5 / 3}>
-            <Terminal className="h-full" />
-          </AspectRatioBox>
-        </Animation3d>
+      <main className="h-screen bg-gray-800 text-gray-50 grid place-items-center px-4 sm:px-8 md:px-12 lg:px-16">
+        <div className="max-w-2xl w-full">
+          <Animation3d>
+            <AspectRatioBox aspectRatio={5 / 3}>
+              <Terminal className="h-full" />
+            </AspectRatioBox>
+          </Animation3d>
+        </div>
       </main>
     </>
   )
