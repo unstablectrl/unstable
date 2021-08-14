@@ -38,7 +38,7 @@ const ActionButton: React.FC<ActionButtonProps> = ({ type }) => {
 
 type TerminalProps = {
   className?: string
-  style?: object
+  style?: Object
 }
 
 const Terminal: React.FC<TerminalProps> = ({ className, style }) => {

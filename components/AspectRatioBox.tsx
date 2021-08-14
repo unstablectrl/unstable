@@ -4,7 +4,7 @@ type AspectRatioBoxProps = {
   aspectRatio?: Number
   center?: Boolean
   className?: string
-  style?: object
+  style?: Object
 }
 
 const AspectRatioBox: React.FC<AspectRatioBoxProps> = ({

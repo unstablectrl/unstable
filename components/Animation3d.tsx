@@ -14,7 +14,7 @@ interface Rotation {
 
 interface Animation3dProps {
   className?: string
-  style?: object
+  style?: Object
 }
 
 const Animation3d: React.FC<Animation3dProps> = ({
