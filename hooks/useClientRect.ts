@@ -7,6 +7,7 @@ export const useClientRect = (): [DOMRect | null, (node: any) => void] => {
       const updateRectWithNode = () => setRect(node.getBoundingClientRect())
       const resizeObserver = new ResizeObserver(updateRectWithNode)
       resizeObserver.observe(node)
+      window.addEventListener('resize', updateRectWithNode)
     }
   }, [])
   return [rect, ref]
