@@ -25,10 +25,10 @@ export default function Home() {
       </div>
       <main className="h-full bg-fuchsia-100 dark:bg-gray-800 text-gray-50 grid place-items-center px-4 sm:px-8 md:px-12 lg:px-16">
         <div className="max-w-2xl w-full">
-          <div className="h-screen flex justify-center">
+          <div className="h-screen grid place-items-center">
             <Eyes />
           </div>
-          <div className="h-screen grid place-items-center">
+          <div className="h-screen ">
             <div className="max-w-2xl w-full">
               <Animation3d>
                 <AspectRatioBox aspectRatio={5 / 3}>
