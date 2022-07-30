@@ -8,6 +8,7 @@ export const useClientRect = (): [DOMRect | null, (node: any) => void] => {
       const resizeObserver = new ResizeObserver(updateRectWithNode)
       resizeObserver.observe(node)
       window.addEventListener('resize', updateRectWithNode)
+      window.addEventListener('scroll', updateRectWithNode)
     }
   }, [])
   return [rect, ref]
