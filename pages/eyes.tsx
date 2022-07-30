@@ -1,5 +1,5 @@
 import { useTheme } from 'next-themes'
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 const darkRight =
   'M353.207 113.613c18.415-1.78 31.656-20.698 29.573-42.256-2.082-21.558-18.699-37.591-37.115-35.812-18.416 1.78-31.657 20.698-29.574 42.255 2.083 21.558 18.7 37.592 37.116 35.813z'
@@ -11,8 +11,13 @@ const lightLeft =
   'M89.464 111.769c-2.747-.919.596-18.314 7.466-38.854 6.871-20.54 14.667-36.445 17.414-35.527 2.746.92-.597 18.315-7.467 38.854-6.87 20.54-14.666 36.446-17.413 35.527z'
 
 function Eyes2() {
-  const { theme } = useTheme()
-
+  // const [mounted, setMounted] = useState(false)
+  const { theme, resolvedTheme } = useTheme()
+  // useEffect(() => setMounted(true), [])
+  console.log('resolvedTheme', resolvedTheme)
+  console.log('theme', theme)
+  // console.log('mounted', mounted)
+  // if (!mounted) null
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -33,8 +38,8 @@ function Eyes2() {
           <path
             id="Right Iris"
             fill="#090909"
-            d={theme === 'dark' ? darkRight : lightRight}
-            style={{ transition: 'all 200ms ease' }}
+            d={resolvedTheme === 'dark' ? darkRight : lightRight}
+            style={{ transition: 'd 200ms ease' }}
           ></path>
           <path
             id="Right Reflection Big"
@@ -58,8 +63,8 @@ function Eyes2() {
           <path
             id="Left Iris"
             fill="#090909"
-            d={theme === 'dark' ? darkLeft : lightLeft}
-            style={{ transition: 'all 200ms ease' }}
+            d={resolvedTheme === 'dark' ? darkLeft : lightLeft}
+            style={{ transition: 'd 200ms ease' }}
           ></path>
           <path
             id="Left Reflection Big"

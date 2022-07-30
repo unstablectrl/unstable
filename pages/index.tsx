@@ -6,9 +6,9 @@ import { FC } from 'react'
 import Animation3d from '../components/Animation3d'
 import AspectRatioBox from '../components/AspectRatioBox'
 import Terminal from '../components/Terminal'
-import Eyes from './eyes'
 
 const ThemeButton = dynamic(() => import('./ThemeButton'), { ssr: false })
+const Eyes = dynamic(() => import('./eyes'), { ssr: false })
 
 export default function Home() {
   return (
@@ -28,7 +28,7 @@ export default function Home() {
           <div className="h-screen grid place-items-center">
             <Eyes />
           </div>
-          <div className="h-screen ">
+          <div className="h-screen grid place-items-center">
             <div className="max-w-2xl w-full">
               <Animation3d>
                 <AspectRatioBox aspectRatio={5 / 3}>
