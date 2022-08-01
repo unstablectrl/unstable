@@ -1,5 +1,4 @@
 import { useTheme } from 'next-themes'
-import React, { useEffect, useRef, useState } from 'react'
 
 const darkRight =
   'M353.207 113.613c18.415-1.78 31.656-20.698 29.573-42.256-2.082-21.558-18.699-37.591-37.115-35.812-18.416 1.78-31.657 20.698-29.574 42.255 2.083 21.558 18.7 37.592 37.116 35.813z'
@@ -11,13 +10,9 @@ const lightLeft =
   'M89.464 111.769c-2.747-.919.596-18.314 7.466-38.854 6.871-20.54 14.667-36.445 17.414-35.527 2.746.92-.597 18.315-7.467 38.854-6.87 20.54-14.666 36.446-17.413 35.527z'
 
 function Eyes2() {
-  // const [mounted, setMounted] = useState(false)
-  const { theme, resolvedTheme } = useTheme()
-  // useEffect(() => setMounted(true), [])
-  console.log('resolvedTheme', resolvedTheme)
-  console.log('theme', theme)
-  // console.log('mounted', mounted)
-  // if (!mounted) null
+  const { resolvedTheme, setTheme } = useTheme()
+  const handleOnClick = () =>
+    setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -27,7 +22,11 @@ function Eyes2() {
       viewBox="0 0 450 150"
     >
       <g id="Eyes">
-        <g id="Right Eye Group">
+        <g
+          id="Right Eye Group"
+          className="cursor-pointer"
+          onClick={handleOnClick}
+        >
           <path
             id="Right Eye"
             fill="url(#paint0_radial_2_2)"
@@ -52,7 +51,11 @@ function Eyes2() {
             d="M327.196 107.202c1.656-1.108-.285-6.914-4.335-12.968s-8.676-10.063-10.332-8.956c-1.656 1.108.285 6.914 4.335 12.968 4.051 6.054 8.677 10.064 10.332 8.956z"
           ></path>
         </g>
-        <g id="Left Eye Group">
+        <g
+          id="Left Eye Group"
+          className="cursor-pointer"
+          onClick={handleOnClick}
+        >
           <path
             id="Left Eye"
             fill="url(#paint1_radial_2_2)"
